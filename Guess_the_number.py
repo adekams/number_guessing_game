@@ -19,52 +19,65 @@ def guess_number():
     while level == "easy":
         max_trial = 6
         number = random.randint(1, 10)
-        print(f'Level: Easy - Number is whole and between 1-10. You have {max_trial} guesses')
+        print(f'Level: Easy - Number is between 1-10. You have {max_trial} guesses')
         while count < max_trial:
-            guess = int(input("Enter your guess here: \n >"))
-            if guess == number:
-                print("You got it right!")
-                play_again()
-            else:
-                print("That is wrong.")
-                count += 1
-                print(f'You have {(max_trial - count)} guess(es) left. \n')
+            
+            try:
+                guess = int(input("Enter your guess between 1 and 10 here: \n >"))
+                if guess == number:
+                    print("You got it right!")
+                    play_again()
+                else:
+                    print("That is wrong.")
+                    count += 1
+                    print(f'You have {(max_trial - count)} guess(es) left. \n')
+            except ValueError:
+                print("Invalid value. Enter whole number")
+                
         else:
-            print(f'You did not guess the right number. number is {number}. Game Over! \n')
+            print(f'Game Over! You did not guess the right number. number is {number}.\n')
             play_again()
 
     while level == "medium":
         max_trial = 4
         number = random.randint(1, 20)
-        print(f'Level: Medium - Number is whole and between 1-20. You have {max_trial} guesses')
+        print(f'Level: Medium - Number is between 1-20. You have {max_trial} guesses')
         while count < max_trial:
-            guess = int(input("Enter your guess here: \n >"))
-            if guess == number:
-                print("You got it right!")
-                play_again()
-            else:
-                print("That is wrong.")
-                count += 1
-                print(f'You have {(max_trial - count)} guess(es) left. \n')
+            try:
+                guess = int(input("Enter your guess between 1 and 20 here: \n >"))
+                if guess == number:
+                    print("You got it right!")
+                    play_again()
+                else:
+                    print("That is wrong.")
+                    count += 1
+                    print(f'You have {(max_trial - count)} guess(es) left. \n')
+            except ValueError:
+                print("Invalid value. Enter whole number")
+
         else:
-            print(f'You did not guess the right number. number is {number}. Game Over! \n')
+            print(f'Game Over! You did not guess the right number. number is {number}.\n')
             play_again()
 
     while level == "hard":
         max_trial = 3
         number = random.randint(1, 50)
-        print(f'Level: Hard - Number is whole and between 1-50. You have {max_trial} guesses')
+        print(f'Level: Hard - Number is between 1-50. You have {max_trial} guesses')
         while count < max_trial:
-            guess = int(input("Enter your guess here: \n >"))
-            if guess == number:
-                print("You got it right!")
-                play_again()
-            else:
-                print("That is wrong.")
-                count += 1
-                print(f'You have {(max_trial - count)} guess(es) left. \n')
+            try:
+                guess = int(input("Enter your guess between 1 and 50 here: \n >"))
+                if guess == number:
+                    print("You got it right!")
+                    play_again()
+                else:
+                    print("That is wrong.")
+                    count += 1
+                    print(f'You have {(max_trial - count)} guess(es) left. \n')
+            except ValueError:
+                print("Invalid value. Enter whole number")
+
         else:
-            print(f'You did not guess the right number. number is {number}. Game Over!\n')
+            print(f'Game Over! You did not guess the right number. number is {number}.\n')
             play_again()
 
     else:
